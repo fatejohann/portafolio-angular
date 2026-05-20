@@ -1,0 +1,66 @@
+<nav role="navigation" aria-label="Navegación principal">
+  <div class="nav-logo">
+    <div class="nav-logo-box" aria-hidden="true">JL</div>
+    <span class="nav-logo-text">Johan López</span>
+  </div>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#proceso">Cómo trabajo</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <!-- Toggle Dark Mode -->
+    <button
+      class="nav-theme-toggle"
+      (click)="themeService.toggle()"
+      [attr.aria-label]="themeService.theme() === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+      [title]="themeService.theme() === 'dark' ? 'Modo claro' : 'Modo oscuro'">
+      @if (themeService.theme() === 'dark') {
+        <!-- Ícono sol -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      } @else {
+        <!-- Ícono luna -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      }
+    </button>
+
+    <!-- Hamburguesa -->
+    <button
+      class="nav-hamburger"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Abrir menú"
+      (click)="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div
+  class="mobile-menu"
+  [class.open]="menuOpen()"
+  role="navigation"
+  aria-label="Menú móvil">
+  <a href="#sobre-mi"  (click)="closeMenu()">Sobre mí</a>
+  <a href="#proyectos" (click)="closeMenu()">Proyectos</a>
+  <a href="#stack"     (click)="closeMenu()">Stack</a>
+  <a href="#proceso"   (click)="closeMenu()">Cómo trabajo</a>
+  <a href="#servicios" (click)="closeMenu()">Servicios</a>
+  <a href="#contacto"  (click)="closeMenu()">Contacto</a>
+</div>

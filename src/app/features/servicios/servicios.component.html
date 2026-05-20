@@ -1,0 +1,46 @@
+<section id="servicios" aria-label="Servicios y precios">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Servicios</h2>
+    <span class="section-tag">Precios en USD</span>
+  </div>
+
+  <div class="servicios-grid">
+    @for (plan of plans; track plan.name) {
+      <div class="servicio-card" [class.featured]="plan.featured" appScrollReveal
+           [attr.aria-label]="plan.featured ? 'Plan más popular' : null">
+        <div class="servicio-tier" [class.popular]="plan.tierStyle === 'popular'" [class.normal]="plan.tierStyle === 'normal'">
+          {{ plan.tier }}
+        </div>
+        <div class="servicio-name">{{ plan.name }}</div>
+        <div class="servicio-price">{{ plan.price }}</div>
+        <div class="servicio-note">{{ plan.note }}</div>
+
+        <ul class="servicio-features" [attr.aria-label]="'Características del plan ' + plan.name">
+          @for (feat of plan.features; track feat) {
+            <li class="servicio-feature">{{ feat }}</li>
+          }
+        </ul>
+
+        @if (plan.featured) {
+          <a [href]="waBase + plan.waText" class="btn-primary" target="_blank" rel="noopener noreferrer">Solicitar →</a>
+        } @else {
+          <a [href]="waBase + plan.waText" class="btn-secondary" target="_blank" rel="noopener noreferrer">Solicitar →</a>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="servicios-extra" aria-label="Servicios adicionales opcionales">
+    @for (extra of extras; track extra.name) {
+      <div class="servicio-extra-item">
+        <div class="servicio-extra-icon" aria-hidden="true">→</div>
+        <div>
+          <div class="servicio-extra-label">{{ extra.label }}</div>
+          <div class="servicio-extra-name">{{ extra.name }}</div>
+          <div class="servicio-extra-price">{{ extra.price }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

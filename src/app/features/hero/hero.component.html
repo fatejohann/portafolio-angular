@@ -1,0 +1,44 @@
+<section class="hero" id="sobre-mi" aria-label="Presentación">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      Disponible para proyectos
+    </div>
+
+    <h1 class="hero-title" aria-label="Webs que venden.">
+      @for (line of typedLines(); track $index) {
+        @if ($index === 2) {
+          <span class="line-accent">{{ line }}</span>
+        } @else {
+          {{ line }}
+        }
+        <br>
+      }
+    </h1>
+
+    <p class="hero-sub">
+      Soy Johan López, desarrollador web independiente en El Salvador. Construyo sitios 100% a medida — sin WordPress, sin plantillas — con código limpio, hosting gratuito y optimizados para aparecer en Google desde el primer día.
+    </p>
+
+    <div class="hero-actions">
+      <a [href]="waLink" class="btn-primary" target="_blank" rel="noopener noreferrer">Hablemos →</a>
+      <a href="#proyectos" class="btn-secondary">Ver proyectos</a>
+    </div>
+
+    <div class="hero-stack" aria-label="Tecnologías que utilizo">
+      @for (tag of stackTags; track tag) {
+        <span class="hero-stack-tag">{{ tag }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="Propuesta de valor">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-block" appScrollReveal>
+        <div class="stat-label">{{ stat.label }}</div>
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-sub">{{ stat.sub }}</div>
+      </div>
+    }
+  </div>
+</section>

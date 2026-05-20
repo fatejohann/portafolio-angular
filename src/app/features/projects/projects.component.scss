@@ -1,0 +1,52 @@
+/* ── Chips de filtro ── */
+.projects-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1.5rem 2rem;
+  border-bottom: var(--border-thick);
+}
+
+.filter-chip {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 8px 18px;
+  border: 2.5px solid var(--black);
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s, box-shadow 0.1s;
+  box-shadow: 3px 3px 0 var(--black);
+
+  &:hover {
+    background: var(--bg2);
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 var(--black);
+  }
+
+  &.active {
+    background: var(--black);
+    color: var(--accent);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--black);
+  }
+}
+
+/* ── Animación de entrada en las tarjetas al filtrar ── */
+.project-card {
+  animation: cardIn 0.3s ease both;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

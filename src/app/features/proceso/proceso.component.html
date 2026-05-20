@@ -1,0 +1,17 @@
+<section id="proceso" class="section-dark" aria-label="Cómo trabajo">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Cómo trabajo</h2>
+    <span class="section-tag">4 pasos simples</span>
+  </div>
+
+  <div class="proceso-grid">
+    @for (step of steps; track step.num) {
+      <div class="proceso-step" appScrollReveal>
+        <div class="paso-num" aria-hidden="true">{{ step.num }}</div>
+        <h3 class="paso-title">{{ step.title }}</h3>
+        <p class="paso-desc">{{ step.desc }}</p>
+      </div>
+    }
+  </div>
+</section>
