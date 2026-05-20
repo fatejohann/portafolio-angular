@@ -35,6 +35,39 @@
   }
 }
 
+/* ── Sistema de Inventario (card full-stack) ── */
+.project-inventario {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 0.55fr;
+  min-height: 220px;
+
+  .inventario-content {
+    padding: 2.5rem;
+    border-right: var(--border-thick);
+  }
+
+  .inventario-meta {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background: var(--bg2);
+  }
+
+  .inventario-note {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: auto;
+  }
+}
+
+.deploy-badge {
+  color: #f59e0b !important;
+  font-weight: 700;
+}
+
 /* ── Animación de entrada en las tarjetas al filtrar ── */
 .project-card {
   animation: cardIn 0.3s ease both;

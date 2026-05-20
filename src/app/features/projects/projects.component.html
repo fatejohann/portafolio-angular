@@ -2,7 +2,7 @@
   <div class="section-header">
     <span class="section-num">01</span>
     <h2 class="section-title">Proyectos</h2>
-    <span class="section-tag">3 demos · 1 proyecto profesional</span>
+    <span class="section-tag">3 demos · 2 personales · 1 profesional</span>
   </div>
 
   <!-- Chips de filtro -->
@@ -102,6 +102,42 @@
         <p class="project-desc">{{ project.desc }}</p>
         <div class="project-demo">{{ project.note }}</div>
       </article>
+    }
+
+    <!-- Sistema de Inventario (proyecto personal full-stack) -->
+    @if (showInventario()) {
+    <article class="project-card project-inventario" appScrollReveal>
+      <div class="inventario-content">
+        <div class="project-tags">
+          @for (tag of inventarioProject.tags; track tag.label) {
+            <span class="project-tag" [class.accent]="tag.accent">{{ tag.label }}</span>
+          }
+        </div>
+        <h3 class="project-name">{{ inventarioProject.name }}</h3>
+        <p class="project-desc">{{ inventarioProject.desc }}</p>
+        <div class="project-demo deploy-badge">{{ inventarioProject.status }}</div>
+      </div>
+
+      <div class="inventario-meta">
+        <div>
+          <div class="pro-built-label">Frontend</div>
+          <div class="pro-built-tags">
+            @for (tech of inventarioProject.frontend; track tech) {
+              <span class="pro-built-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+        <div>
+          <div class="pro-built-label">Backend</div>
+          <div class="pro-built-tags">
+            @for (tech of inventarioProject.backend; track tech) {
+              <span class="pro-built-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+        <div class="inventario-note">{{ inventarioProject.note }}</div>
+      </div>
+    </article>
     }
 
     <!-- Proyecto profesional -->

@@ -168,7 +168,7 @@
   transition: background 0.15s;
 
   &:last-child { border-right: none; }
-  &:not(.project-pro):hover { background: var(--bg2); }
+  &:not(.project-pro):not(.project-inventario):hover { background: var(--bg2); }
 }
 
 .project-mockup {
@@ -753,6 +753,23 @@ footer {
     .pro-confidential    { color: var(--accent); }
     .pro-built-label     { color: rgba(240,232,224,0.4); }
     .pro-built-tag       { border-color: rgba(240,232,224,0.28); color: #f0e8e0; }
+  }
+
+  /* ── Tarjeta inventario (full-stack personal) ── */
+  .project-inventario {
+    background: #0e0b0a;
+    color: #f0e8e0;
+
+    .inventario-content      { border-right-color: rgba(240,232,224,0.12); }
+    .inventario-meta         { background: #161210; }
+    .project-tag             { border-color: rgba(240,232,224,0.28); color: #f0e8e0; }
+    .project-tag.accent      { background: var(--accent); border-color: var(--accent); color: #111111; }
+    .project-name            { color: #f0e8e0; }
+    .project-desc            { color: rgba(240,232,224,0.7); }
+    .project-demo            { border-top-color: rgba(240,232,224,0.15); }
+    .pro-built-label         { color: rgba(240,232,224,0.4); }
+    .pro-built-tag           { border-color: rgba(240,232,224,0.28); color: #f0e8e0; }
+    .inventario-note         { color: rgba(240,232,224,0.35); }
   }
 
   /* ── Footer (también usa --black como fondo) ── */

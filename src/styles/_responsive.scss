@@ -20,6 +20,9 @@
   .project-pro { grid-template-columns: 1fr; }
   .pro-content { border-right: none; border-bottom: 4px solid rgba(255,255,255,0.12); }
 
+  .project-inventario { grid-template-columns: 1fr; }
+  .project-inventario .inventario-content { border-right: none; border-bottom: var(--border-thick); }
+
   .stack-grid { grid-template-columns: 1fr; }
   .stack-col  { border-right: none; border-bottom: var(--border-thick); }
   .stack-col:last-child { border-bottom: none; }
