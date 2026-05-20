@@ -307,6 +307,13 @@
   .project-demo      { border-top-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); }
 }
 
+/* Overrides de modo claro para la tarjeta de inventario
+   (los globales .pro-built-* tienen colores blancos pensados para .project-pro oscuro) */
+.project-inventario {
+  .pro-built-label { color: var(--gray); }
+  .pro-built-tag   { border-color: rgba(0,0,0,0.25); color: var(--black); }
+}
+
 .pro-content { padding: 2.5rem 2rem; border-right: 4px solid rgba(255,255,255,0.12); }
 .pro-meta {
   padding: 2.5rem 2rem;
