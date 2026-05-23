@@ -2,7 +2,7 @@ import { Component, signal, computed } from '@angular/core';
 import { ScrollRevealDirective } from '../../core/directives/scroll-reveal.directive';
 
 export interface Project {
-  mockupType: 'restaurant' | 'dental' | 'boutique';
+  mockupType: 'restaurant' | 'boutique' | 'derma';
   mockupUrl: string;
   tags: { label: string; accent?: boolean }[];
   techFilters: string[];
@@ -39,7 +39,7 @@ export interface InventarioProject {
 })
 export class ProjectsComponent {
   // Filtro reactivo
-  readonly filterOptions = ['Todos', 'HTML/CSS', 'JavaScript', 'SEO', 'Angular', 'Node.js'];
+  readonly filterOptions = ['Todos', 'HTML/CSS', 'JavaScript', 'Angular', 'Node.js'];
   readonly activeFilter = signal<string>('Todos');
 
   setFilter(f: string): void {
@@ -58,13 +58,13 @@ export class ProjectsComponent {
       note: '\u2605 Proyecto de demostracion',
     },
     {
-      mockupType: 'dental',
-      mockupUrl: 'sonrisaperfecta.com.sv',
-      tags: [{ label: 'Clinica', accent: true }, { label: 'HTML/CSS' }, { label: 'SEO' }],
-      techFilters: ['HTML/CSS', 'SEO'],
-      name: 'Sonrisa Perfecta',
-      desc: 'Sitio empresarial para clinica dental con catalogo de servicios, formulario de citas y posicionamiento en busquedas locales.',
-      note: '\u2605 Proyecto de demostracion',
+      mockupType: 'derma',
+      mockupUrl: 'democlinicaderma.netlify.app',
+      tags: [{ label: 'Clinica', accent: true }, { label: 'HTML/CSS' }, { label: 'JavaScript' }, { label: 'Netlify' }],
+      techFilters: ['HTML/CSS', 'JavaScript'],
+      name: 'DermaSkin Clinica',
+      desc: 'Landing page para clinica dermatologica en San Salvador. Diseno medico-premium con paleta terracota, servicios, testimonios y formulario de citas. Desplegado en Netlify.',
+      note: 'Ver en vivo \u2192 democlinicaderma.netlify.app',
     },
     {
       mockupType: 'boutique',
