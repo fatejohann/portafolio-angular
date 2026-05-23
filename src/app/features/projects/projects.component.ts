@@ -9,6 +9,7 @@ export interface Project {
   name: string;
   desc: string;
   note: string;
+  noteUrl?: string;
 }
 
 export interface ProProject {
@@ -64,7 +65,8 @@ export class ProjectsComponent {
       techFilters: ['HTML/CSS', 'JavaScript'],
       name: 'DermaSkin Clinica',
       desc: 'Landing page para clinica dermatologica en San Salvador. Diseno medico-premium con paleta terracota, servicios, testimonios y formulario de citas. Desplegado en Netlify.',
-      note: 'Ver en vivo \u2192 democlinicaderma.netlify.app',
+      note: 'Ver en vivo \u2192',
+      noteUrl: 'https://democlinicaderma.netlify.app',
     },
     {
       mockupType: 'boutique',

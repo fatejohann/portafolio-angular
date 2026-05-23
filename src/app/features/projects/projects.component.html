@@ -100,7 +100,13 @@
         </div>
         <h3 class="project-name">{{ project.name }}</h3>
         <p class="project-desc">{{ project.desc }}</p>
-        <div class="project-demo">{{ project.note }}</div>
+        <div class="project-demo">
+          @if (project.noteUrl) {
+            {{ project.note }} <a [href]="project.noteUrl" target="_blank" rel="noopener noreferrer">{{ project.noteUrl.replace('https://', '') }}</a>
+          } @else {
+            {{ project.note }}
+          }
+        </div>
       </article>
     }
 
